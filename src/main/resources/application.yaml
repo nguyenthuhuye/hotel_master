@@ -7,7 +7,7 @@ spring:
   application:
       name: hotelmaster
   datasource:
-    url: "jdbc:mysql://localhost:3366/identity_service"
+    url: "jdbc:mysql://localhost:3366/hotel_master"
     username: root
     password: root
   jpa:
