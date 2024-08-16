@@ -16,24 +16,24 @@ import java.time.LocalDate;
 public class Booking {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
-    private String bookingId;
+    String bookingId;
 
     @ManyToOne
-    @JoinColumn(name = "guest_id")
-    private Guest guest;
+    @JoinColumn(name = "user_id")
+    User user;
 
     @ManyToOne
     @JoinColumn(name = "room_id")
-    private Room room;
+    Room room;
 
-    private LocalDate checkInDate;
-    private LocalDate checkOutDate;
-    private BigDecimal totalPrice;
+    LocalDate checkInDate;
+    LocalDate checkOutDate;
+    BigDecimal totalPrice;
 
     @Enumerated(EnumType.STRING)
     private BookingStatus status;
 
     public enum BookingStatus {
-        CONFIRMED, CANCELLED, COMPLETED
+        CONFIRMED, CANCELLED, COMPLETED, AVAILABLE, RESERVED, CLEANING
     }
 }
